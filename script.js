@@ -71,7 +71,7 @@ const criarPlayer = () => {
     inicio.appendChild(novaDiv)
 }
 criarPlayer()
-
+const vitoria = document.getElementById("vitoria")
 const jogador = document.getElementById("jogador")
 let initialPosition = 189
 document.addEventListener('keydown', (evt) => {
@@ -79,6 +79,9 @@ document.addEventListener('keydown', (evt) => {
         if (main.children[initialPosition + 1].id == "caminho" || main.children[initialPosition + 1].id == "finish") {
             initialPosition += 1
         main.children[initialPosition].appendChild(jogador)
+        if (main.children[188] == main.children[initialPosition] ){
+            vitoria.style.display = "block"
+        }
         }   
     } 
     if (evt.key == "ArrowLeft"){
