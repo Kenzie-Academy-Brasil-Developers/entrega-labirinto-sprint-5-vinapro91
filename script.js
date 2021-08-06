@@ -73,5 +73,36 @@ const criarPlayer = () => {
 criarPlayer()
 
 const jogador = document.getElementById("jogador")
-
+let initialPosition = 189
 // main.children[189].firstElementChild
+document.addEventListener('keydown', (evt) => {
+    console.log(evt)
+    if (evt.key == "ArrowRight"){
+        if (main.children[initialPosition + 1].id == "caminho" || main.children[initialPosition + 1].id == "finish") {
+            initialPosition += 1
+        main.children[initialPosition].appendChild(jogador)
+        }   
+    } 
+    if (evt.key == "ArrowLeft"){
+        if (main.children[initialPosition - 1].id == "caminho") {
+        initialPosition -= 1
+        main.children[initialPosition].appendChild(jogador)
+        }
+
+    } 
+    if (evt.key == "ArrowUp"){
+        if (main.children[initialPosition - 21].id == "caminho") {
+        initialPosition -= 21
+        main.children[initialPosition].appendChild(jogador)   
+        }
+    } 
+    if (evt.key == "ArrowDown"){
+        if (main.children[initialPosition + 21].id == "caminho") {
+        initialPosition += 21
+        main.children[initialPosition].appendChild(jogador)
+        }   
+    }
+    
+
+})
+
