@@ -17,7 +17,6 @@ const map = [
 ];;
 const main = document.getElementById("main");
 
-
 const criarMuro = () => {
     const novaDiv = document.createElement("div");
     novaDiv.id = "muro"
@@ -38,10 +37,7 @@ const criarSaida = () => {
     novaDiv.id = "finish"
     main.appendChild(novaDiv)
 }
-const quebraLinha = () => {
-    const novaDiv = document.createElement("br");
-    main.appendChild(novaDiv)
-}
+
 
 const renderBloco = () => {
     for(let i = 0 ; i<map.length; i++){
@@ -65,3 +61,17 @@ const renderBloco = () => {
 }
 
 renderBloco()
+
+
+
+const inicio = document.getElementById("start")
+const criarPlayer = () => {
+    const novaDiv = document.createElement("div");
+    novaDiv.id = "jogador"
+    inicio.appendChild(novaDiv)
+}
+criarPlayer()
+
+const jogador = document.getElementById("jogador")
+
+// main.children[189].firstElementChild
